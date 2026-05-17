@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>استمارة تقييم الدورة التكوينية 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #1a6b3c;
+  --green-light: #2d8a52;
+  --green-pale: #e8f5ee;
+  --green-border: #b8ddc8;
+  --gold: #c8982a;
+  --gold-light: #f0d080;
+  --text: #1a2a1e;
+  --text-muted: #4a6a54;
+  --bg: #f7faf8;
+  --white: #ffffff;
+  --shadow: 0 2px 20px rgba(26,107,60,0.08);
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  direction: rtl;
+}
+
+.header {
+  background: linear-gradient(135deg, var(--green) 0%, #0f4a28 100%);
+  color: white;
+  padding: 3rem 2rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.header-org {
+  font-family: 'Amiri', serif;
+  font-size: 1rem;
+  opacity: 0.85;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.header h1 {
+  font-family: 'Amiri', serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.header-year {
+  display: inline-block;
+  background: var(--gold);
+  color: #3a2800;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.25rem 1.2rem;
+  border-radius: 50px;
+  margin-top: 0.5rem;
+}
+
+.basmala {
+  background: var(--white);
+  border-right: 4px solid var(--gold);
+  border-left: 4px solid var(--gold);
+  margin: 2rem auto;
+  max-width: 780px;
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.basmala-text {
+  font-family: 'Amiri', serif;
+  font-size: 1.4rem;
+  color: var(--green);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.basmala p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.confidential {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--green-pale);
+  color: var(--green);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  margin-top: 0.75rem;
+  border: 1px solid var(--green-border);
+}
+
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 1rem 4rem;
+}
+
+.section {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border: 1px solid var(--green-border);
+}
+
+.section-header {
+  background: var(--green);
+  color: white;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-num {
+  background: var(--gold);
+  color: #3a2800;
+  font-weight: 700;
+  font-size: 0.85rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.section-header h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.section-body {
+  padding: 1.5rem;
+}
+
+.question {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--green-pale);
+}
+
+.question:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.question label {
+  display: block;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.q-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--green-pale);
+  color: var(--green);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+
+.optional {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-right: 0.5rem;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--green-border);
+  border-radius: 8px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  direction: rtl;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(26,107,60,0.1);
+  background: white;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.radio-group,
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.radio-option,
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid var(--green-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: var(--bg);
+}
+
+.radio-option:hover,
+.checkbox-option:hover {
+  background: var(--green-pale);
+  border-color: var(--green);
+}
+
+.radio-option input,
+.checkbox-option input {
+  accent-color: var(--green);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.radio-option span,
+.checkbox-option span {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.scale-container {
+  background: var(--green-pale);
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid var(--green-border);
+}
+
+.scale-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.scale-labels span:first-child { color: #c0392b; font-weight: 600; }
+.scale-labels span:last-child { color: var(--green); font-weight: 600; }
+
+.scale-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.scale-option {
+  flex: 1;
+  text-align: center;
+}
+
+.scale-option input[type="radio"] {
+  display: none;
+}
+
+.scale-option label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  border: 1.5px solid var(--green-border);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  background: white;
+  transition: all 0.2s;
+  margin-bottom: 0;
+}
+
+.scale-option input[type="radio"]:checked + label {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+  transform: scale(1.05);
+}
+
+.scale-option label:hover {
+  background: var(--green-pale);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.submit-section {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.submit-btn {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(26,107,60,0.3);
+  min-width: 200px;
+}
+
+.submit-btn:hover {
+  background: var(--green-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26,107,60,0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.success-msg {
+  display: none;
+  background: var(--green-pale);
+  border: 2px solid var(--green);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.success-msg h3 {
+  color: var(--green);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.success-msg p {
+  color: var(--text-muted);
+}
+
+.error-msg {
+  display: none;
+  background: #fef0ee;
+  border: 1.5px solid #e74c3c;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #c0392b;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.formspree-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  background: #fffbea;
+  border: 1px solid var(--gold-light);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  text-align: right;
+}
+
+.formspree-note a {
+  color: var(--green);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .header { padding: 2rem 1rem 1.5rem; }
+  .section-body { padding: 1rem; }
+  .basmala { padding: 1rem; }
+  .scale-option label { height: 36px; font-size: 0.85rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-org">جمعية شباب القرآن الكريم — حمام سوسة</div>
+  <h1>استمارة تقييم الدورة التكوينية</h1>
+  <div class="header-year">2026</div>
+</div>
+
+<div class="container">
+
+  <div class="basmala">
+    <div class="basmala-text">بسم الله الرحمن الرحيم</div>
+    <p>السلام عليكم ورحمة الله وبركاته،<br>
+    تهدف هذه الاستمارة إلى تقييم عمل لجنة التكوين والهيئة المديرة لجمعية شباب القرآن الكريم بحمام سوسة من طرف المدرسين المشاركين في دورة حفظ وتدبر آيات سورة التوبة لسنة 2026.<br>
+    آراؤكم وملاحظاتكم مهمة جداً لتحسين الأداء في السنوات القادمة.</p>
+    <div class="confidential">🔒 جميع الإجابات سرية تماماً</div>
+  </div>
+
+  <form id="surveyForm">
+
+    <!-- Section 1 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">١</div>
+        <h2>المعلومات العامة</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="question">
+          <label><span class="q-num">1</span> اسم المدرس <span class="optional">(اختياري)</span></label>
+          <input type="text" name="اسم_المدرس" placeholder="اكتب اسمك هنا...">
+        </div>
+
+        <div class="question">
+          <label><span class="q-num">2</span> عدد سنوات الخبرة في التدريس القرآني</label>
+          <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="سنوات_الخبرة" value="أقل من سنة" required><span>أقل من سنة</span></label>
+            <label class="radio-option"><input type="radio" name="سنوات_الخبرة" value="1-3 سنوات"><span>1–3 سنوات</span></label>
+            <label class="radio-option"><input type="radio" name="سنوات_الخبرة" value="4-6 سنوات"><span>4–6 سنوات</span></label>
+            <label class="radio-option"><input type="radio" name="سنوات_الخبرة" value="أكثر من 6 سنوات"><span>أكثر من 6 سنوات</span></label>
+          </div>
+        </div>
+
+        <div class="question">
+          <label><span class="q-num">3</span> عدد الحصص التي حضرتها في هذه الدورة</label>
+          <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="نسبة_الحضور" value="أقل من 50%" required><span>أقل من 50%</span></label>
+            <label class="radio-option"><input type="radio" name="نسبة_الحضور" value="من 50% إلى 75%"><span>من 50% إلى 75%</span></label>
+            <label class="radio-option"><input type="radio" name="نسبة_الحضور" value="أكثر من 75%"><span>أكثر من 75%</span></label>
+            <label class="radio-option"><input type="radio" name="نسبة_الحضور" value="جميع الحصص"><span>جميع الحصص</span></label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">٢</div>
+        <h2>تقييم الدورة التكوينية</h2>
+      </div>
+      <div class="section-body">
+
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.25rem; background:var(--green-pale); padding:0.6rem 0.9rem; border-radius:8px;">
+          قيّم كل عنصر من 1 إلى 5 &nbsp;|&nbsp; 1 = غير راضٍ تماماً &nbsp;·&nbsp; 5 = راضٍ جداً
+        </p>
+
+        <!-- Scale questions 4-11 -->
+        <div id="scaleQuestions"></div>
+
+        <div class="question">
+          <label><span class="q-num">12</span> تقييمك العام لبرنامج الدورة التكوينية 2026</label>
+          <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="التقييم_العام" value="ممتاز" required><span>ممتاز</span></label>
+            <label class="radio-option"><input type="radio" name="التقييم_العام" value="جيد جداً"><span>جيد جداً</span></label>
+            <label class="radio-option"><input type="radio" name="التقييم_العام" value="جيد"><span>جيد</span></label>
+            <label class="radio-option"><input type="radio" name="التقييم_العام" value="مقبول"><span>مقبول</span></label>
+            <label class="radio-option"><input type="radio" name="التقييم_العام" value="ضعيف"><span>ضعيف</span></label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">٣</div>
+        <h2>آراؤكم حول الدورة</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="question">
+          <label><span class="q-num">13</span> ما هي الأسباب الرئيسية لتغيب المدرسين بكثافة في حصص التكوين (برأيك)؟</label>
+          <textarea name="أسباب_التغيب" placeholder="اكتب هنا..."></textarea>
+        </div>
+
+        <div class="question">
+          <label><span class="q-num">14</span> أبرز الإيجابيات في هذه الدورة التكوينية</label>
+          <textarea name="الإيجابيات" placeholder="اكتب هنا..."></textarea>
+        </div>
+
+        <div class="question">
+          <label><span class="q-num">15</span> أبرز السلبيات أو النقاط التي تحتاج إلى تحسين</label>
+          <textarea name="السلبيات" placeholder="اكتب هنا..."></textarea>
+        </div>
+
+        <div class="question">
+          <label><span class="q-num">16</span> اقتراحاتك لتطوير حصص التكوين في السنوات القادمة</label>
+          <textarea name="اقتراحات_التكوين" placeholder="اكتب هنا..."></textarea>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">٤</div>
+        <h2>تقييم عمل الهيئة المديرة</h2>
+      </div>
+      <div class="section-body">
+
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.25rem; background:var(--green-pale); padding:0.6rem 0.9rem; border-radius:8px;">
+          قيّم كل عنصر من 1 إلى 5 &nbsp;|&nbsp; 1 = غير راضٍ تماماً &nbsp;·&nbsp; 5 = راضٍ جداً
+        </p>
+
+        <div id="scaleQuestions2"></div>
+
+        <div class="question">
+          <label><span class="q-num">23</span> ما هي الأسباب الرئيسية التي تجعل بعض المدرسين يعزفون عن المشاركة في فعاليات الجمعية؟ (اختر ما ينطبق)</label>
+          <div class="checkbox-group">
+            <label class="checkbox-option"><input type="checkbox" name="أسباب_العزوف" value="ضيق الوقت / التزامات شخصية"><span>ضيق الوقت / التزامات شخصية</span></label>
+            <label class="checkbox-option"><input type="checkbox" name="أسباب_العزوف" value="عدم الاهتمام بالمواضيع المقترحة"><span>عدم الاهتمام بالمواضيع المقترحة</span></label>
+            <label class="checkbox-option"><input type="checkbox" name="أسباب_العزوف" value="ضعف التواصل مع الهيئة المديرة"><span>ضعف التواصل مع الهيئة المديرة</span></label>
+            <label class="checkbox-option"><input type="checkbox" name="أسباب_العزوف" value="عدم الشعور بالتقدير أو الدعم"><span>عدم الشعور بالتقدير أو الدعم</span></label>
+            <label class="checkbox-option"><input type="checkbox" name="أسباب_العزوف" value="مشاكل تنظيمية أو إدارية"><span>مشاكل تنظيمية أو إدارية</span></label>
+            <label class="checkbox-option"><input type="checkbox" name="أسباب_العزوف" value="أسباب شخصية أخرى"><span>أسباب شخصية أخرى</span></label>
+            <label class="checkbox-option"><input type="checkbox" name="أسباب_العزوف" value="أخرى"><span>أخرى (يرجى التوضيح)</span></label>
+          </div>
+        </div>
+
+        <div class="question">
+          <label><span class="q-num">24</span> اقتراحاتك لتحسين عمل الهيئة المديرة وزيادة المشاركة</label>
+          <textarea name="اقتراحات_الهيئة" placeholder="اكتب هنا..."></textarea>
+        </div>
+
+        <div class="question">
+          <label><span class="q-num">25</span> هل لديك أي ملاحظات أو اقتراحات عامة أخرى؟</label>
+          <textarea name="ملاحظات_عامة" placeholder="اكتب هنا..."></textarea>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="submit-section">
+      <button type="submit" class="submit-btn" id="submitBtn">إرسال الاستمارة ✓</button>
+      <div class="error-msg" id="errorMsg">حدث خطأ أثناء الإرسال. يرجى المحاولة مجدداً.</div>
+      <div class="success-msg" id="successMsg">
+        <h3>✅ تم إرسال استمارتك بنجاح!</h3>
+        <p>جزاك الله خيراً على مشاركتك. آراؤكم تساعدنا على التحسين المستمر.</p>
+      </div>
+      <div class="formspree-note">
+        ⚙️ <strong>ملاحظة للمسؤول:</strong> لتفعيل الإرسال، سجّل في <a href="https://formspree.io" target="_blank">formspree.io</a> مجاناً واستبدل <code>mredgzay</code> في كود الصفحة بمعرّف النموذج الخاص بك.
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<script>
+const scaleQ1 = [
+  { num: 4, name: "جودة_المحتوى_العلمي", label: "جودة المحتوى العلمي (حفظ + تدبر)" },
+  { num: 5, name: "وضوح_الشرح", label: "وضوح الشرح وطريقة التدريس" },
+  { num: 6, name: "مناسبة_البرنامج", label: "مناسبة البرنامج لمستواك" },
+  { num: 7, name: "فعالية_الطرق_التعليمية", label: "فعالية الطرق التعليمية المستخدمة" },
+  { num: 8, name: "جودة_المواد_التعليمية", label: "جودة المواد التعليمية والوسائل" },
+  { num: 9, name: "تنظيم_الحصص", label: "تنظيم الحصص (موعد، مدة، انضباط)" },
+  { num: 10, name: "تفاعل_المكونين", label: "تفاعل المكونين مع المشاركين" },
+  { num: 11, name: "الاستفادة_الشخصية", label: "استفادتك الشخصية من الدورة" },
+];
+
+const scaleQ2 = [
+  { num: 17, name: "أداء_الهيئة_المديرة", label: "أداء الهيئة المديرة بشكل عام" },
+  { num: 18, name: "التواصل_مع_المدرسين", label: "التواصل مع المدرسين والمشاركين" },
+  { num: 19, name: "دعم_المدرسين", label: "دعم المدرسين وتلبية احتياجاتهم" },
+  { num: 20, name: "تنظيم_الفعاليات", label: "تنظيم الفعاليات والأنشطة العامة للجمعية" },
+  { num: 21, name: "الشفافية_والمصداقية", label: "الشفافية والمصداقية في التسيير" },
+  { num: 22, name: "المتابعة_بعد_الدورات", label: "المتابعة بعد الدورات التكوينية" },
+];
+
+function buildScale(questions, containerId) {
+  const container = document.getElementById(containerId);
+  questions.forEach(q => {
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `
+      <label><span class="q-num">${q.num}</span> ${q.label}</label>
+      <div class="scale-container">
+        <div class="scale-labels">
+          <span>غير راضٍ تماماً ←</span>
+          <span>→ راضٍ جداً</span>
+        </div>
+        <div class="scale-options">
+          ${[1,2,3,4,5].map(v => `
+            <div class="scale-option">
+              <input type="radio" name="${q.name}" id="${q.name}_${v}" value="${v}" required>
+              <label for="${q.name}_${v}">${v}</label>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+buildScale(scaleQ1, 'scaleQuestions');
+buildScale(scaleQ2, 'scaleQuestions2');
+
+document.getElementById('surveyForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const errorMsg = document.getElementById('errorMsg');
+  const successMsg = document.getElementById('successMsg');
+
+  btn.disabled = true;
+  btn.textContent = 'جاري الإرسال...';
+  errorMsg.style.display = 'none';
+
+  const formData = new FormData(this);
+
+  try {
+    const response = await fetch('https://formspree.io/f/mredgzay', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      successMsg.style.display = 'block';
+      this.style.display = 'none';
+    } else {
+      throw new Error('Server error');
+    }
+  } catch (err) {
+    errorMsg.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'إرسال الاستمارة ✓';
+  }
+});
+</script>
+</body>
+</html>
